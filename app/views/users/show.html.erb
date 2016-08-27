@@ -1,0 +1,15 @@
+<h1>Your profile</h1>
+<h5>Email: <%=@user.email%></p>
+<h5>Items</h5>
+<div class='row'>
+	<div class='col-md-8'>
+		<ul>
+			<% @items.each do |item| %>
+				<li><%= render partial: 'items/item', locals: {item: item} %></li>
+			<% end %>
+		</ul>
+	</div>
+	<div class='col-md-4'>
+		<%= render partial: 'items/form', locals: {user: @user, item: @user.items.new} %>
+	</div>
+</div>

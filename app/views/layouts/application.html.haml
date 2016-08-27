@@ -31,12 +31,12 @@
 			- if flash[:notice]
 				%p.alert.alert-success
 					= flash[:notice]
-			- elsif flash[:alert]
-				%p.alert.alert-warning
-					= flash[:alert]
 			- elsif flash.now[:alert]
 				%p.alert.alert-danger
 					= flash.now[:alert]
+			- elsif flash[:alert]
+				%p.alert.alert-warning
+					= flash[:alert]
 
 		.container
 			= yield
