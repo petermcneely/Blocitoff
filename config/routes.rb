@@ -1,11 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  devise_for :users, controllers: {sessions: 'users/sessions'}
+
   get 'about' => 'welcome#about'
+
+  authenticated :user do
+    devise_scope :user do
+      root "users/sessions#show", as: :authenticated_root
+    end 
+  end
   
-  # You can have the root of your site routed with "root"
   root 'welcome#index'
 
   # Example of regular route:
