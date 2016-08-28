@@ -16,7 +16,27 @@ class ItemsController < ApplicationController
 			error_message += "."
 			flash[:alert] = error_message
 		end
-		redirect_to root_path
+		
+		respond_to do |format|
+			format.html { redirect_to root_path }
+			format.js
+		end
+	end
+
+	def destroy
+		@user = User.find(params[:user_id])
+		@item = @user.items.find(params[:id])
+
+		if @item.delete
+			flash[:notice] = "Successfully deleted your to-do item!"
+		else
+			flash[:alert] = "Unable to delete your to-do item. Please try again."
+		end
+		
+		respond_to do |format|
+			format.html { redirect_to root_path }
+			format.js
+		end
 	end
 
 	private

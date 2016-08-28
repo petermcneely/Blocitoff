@@ -1,0 +1,6 @@
+<% if @item.valid? %>
+	$("#js-items").append("<li id=item-<%=@item.id%>><%= escape_javascript(render(@item))%></li>");
+<% else %>
+	$(".flash").prepend("<div class='alert alert-danger'><%= flash.now[:alert] %></div>");
+<% end %>
+$(".new-item").html("<%= escape_javascript(render partial: 'items/form', locals: {user: @user, item: @user.items.new})%>");
