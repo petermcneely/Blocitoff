@@ -1,0 +1,6 @@
+<% if @item.destroyed? %>
+	$(".flash").html("<div class='alert alert-success'><%= flash[:notice] %></div>");
+	$("#item-<%=@item.id%>").hide();
+<% else %>
+	$(".flash").html("<div class='alert alert-danger'><%= flash.now[:alert] %></div>");
+<% end %>

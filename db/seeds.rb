@@ -19,6 +19,7 @@ users = User.all
 60.times do
 	Item.create(
 		name: Faker::Lorem::sentence,
-		user: users.sample
+		user: users.sample,
+		created_at: Time.now
 		)
 end
