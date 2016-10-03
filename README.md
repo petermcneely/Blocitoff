@@ -5,4 +5,4 @@ After creating an account, a user is able to create and destroy their own to-do 
 
 To exercise building rake tasks, the application features a task that will delete to-do items seven days after their creation.
 
-See the app in action at [bk-blocitoff.herokuapp.com](bk-blocitoff.herokuapp.com)
+See the app in action at [http://www.bk-blocitoff.herokuapp.com](http://www.bk-blocitoff.herokuapp.com)
